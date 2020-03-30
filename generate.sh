@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 
-for i in {1..3}
+places=./hiding_places
+if [ -d "$places" ]; then
+	rm -rf "$places"
+fi
+mkdir "$places"
+for i in {1..9}
 do
-  DIRNAME=`mktemp -d .XXX`
+  DIRNAME=`mktemp -d "$places/.XXX"`
   if test $i == 1
   then
     (
